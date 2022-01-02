@@ -1,32 +1,16 @@
-const express = require('express')
-const dateFns = require('date-fns');
+const express = require('express');
 
-var blogController = require('./controllers/blogController')
+var requestLogger = require('./utils/requestLogger');
 
-const app = express()
-const port = 3000
+var blogController = require('./controllers/blogController');
 
-var myLogger = function (req, res, next) {
-    console.log(`${dateFns.format(new Date(), 'dd/MM/yyyy HH:ss:SSS')} - Request (${req.originalUrl})`)
-    next()
-  }
-  
-app.use(myLogger)
+const app = express();
+const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+app.use(requestLogger);
 
-app.get('/Hello', (req, res) => {
-    res.send('Oh, I didnt see you there')
-})
-
-// app.get('/blog/:blogId', (req, response) => {
-//     response.send(`Blog Id: ${req.params.blogId}`)
-// })
-
-app.use('/blog', blogController)
+app.use('/blog', blogController);
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Listening at http://localhost:${port}`);
 })
