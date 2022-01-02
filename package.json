@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "name": "1-node-rest-backend-blog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OctetMind/1-Node-Rest-Backend-Blog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OctetMind/1-Node-Rest-Backend-Blog/issues"
+  },
+  "homepage": "https://github.com/OctetMind/1-Node-Rest-Backend-Blog#readme",
+  "description": ""
+}
