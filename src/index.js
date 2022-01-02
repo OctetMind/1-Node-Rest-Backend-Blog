@@ -1,8 +1,17 @@
 const express = require('express')
+const dateFns = require('date-fns');
+
 var blogController = require('./controllers/blogController')
 
 const app = express()
 const port = 3000
+
+var myLogger = function (req, res, next) {
+    console.log(`${dateFns.format(new Date(), 'dd/MM/yyyy HH:ss:SSS')} - Request (${req.originalUrl})`)
+    next()
+  }
+  
+app.use(myLogger)
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
