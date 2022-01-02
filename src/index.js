@@ -4,12 +4,12 @@ var blogController = require('./controllers/blogController')
 const app = express()
 const port = 3000
 
-app.get('/', (reqest, response) => {
-    response.send('Hello World!')
+app.get('/', (req, res) => {
+    res.send('Hello World!')
 })
 
-app.get('/Hello', (reqest, response) => {
-    response.send('Oh, I didnt see you there')
+app.get('/Hello', (req, res) => {
+    res.send('Oh, I didnt see you there')
 })
 
 // app.get('/blog/:blogId', (req, response) => {
